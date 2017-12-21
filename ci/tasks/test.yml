@@ -2,7 +2,6 @@
 platform: linux
 inputs:
 - name: git-repo
-- name: spring-boot-ci-image
 run:
   path: sh
   args:
@@ -10,9 +9,4 @@ run:
     - |
       source /docker-lib.sh
       start_docker
-
-      # Run the container with tests and its dependencies.
-      docker-compose -f git-repo/ci/tasks/dc-test.yml run test
-
-      docker-compose -f git-repo/ci/tasks/dc-test.yml down
-      docker volume rm $(docker volume ls -q)
+      docker run -it --rm mbhave/spring-boot-dcind-image echo "Hello World"
