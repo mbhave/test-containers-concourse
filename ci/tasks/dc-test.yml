@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  test:
+    image: springci/spring-boot-ci-image:master
+    container_name: test
+    volumes:
+    - ../../../git-repo/:/git-repo
+    command: /git-repo/ci/scripts/test.sh

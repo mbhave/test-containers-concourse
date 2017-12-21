@@ -4,4 +4,15 @@ inputs:
 - name: git-repo
 - name: spring-boot-ci-image
 run:
-  path: git-repo/ci/scripts/test.sh
+  path: sh
+  args:
+    - -exc
+    - |
+      source /docker-lib.sh
+      start_docker
+
+      # Run the container with tests and its dependencies.
+      docker-compose -f git-repo/ci/tasks/dc-test.yml run test
+
+      docker-compose -f git-repo/ci/tasks/dc-test.yml down
+      docker volume rm $(docker volume ls -q)
