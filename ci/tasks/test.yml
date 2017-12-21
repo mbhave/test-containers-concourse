@@ -9,4 +9,4 @@ run:
     - |
       source /docker-lib.sh
       start_docker
-      docker run -it --rm springci/spring-boot-ci-image:master echo "Hello World"
+      docker run -it --rm springci/spring-boot-ci-image:master git-repo/ci/scripts/test.sh
