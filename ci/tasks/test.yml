@@ -1,0 +1,7 @@
+---
+platform: linux
+inputs:
+- name: git-repo
+- name: spring-boot-ci-image
+run:
+  path: git-repo/ci/scripts/test.sh
