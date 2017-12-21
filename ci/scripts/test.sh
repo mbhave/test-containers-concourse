@@ -2,5 +2,5 @@
 set -e
 
 pushd git-repo > /dev/null
-	mvn test
+	./mvn test
 popd > /dev/null
