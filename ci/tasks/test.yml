@@ -9,4 +9,4 @@ run:
     - |
       source /docker-lib.sh
       start_docker
-      docker run -it --rm mbhave/spring-boot-dcind-image echo "Hello World"
+      docker run -it --rm springci/spring-boot-ci-image:master echo "Hello World"
